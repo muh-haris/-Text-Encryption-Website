@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Encryption Tool</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/logo.png" alt="Logo" class="logo" />
+    </div>
+    <div class="container">
+      <div class="popup" id="copyPopup">
+        Encrypted text copied to clipboard!
+      </div>
+      <h1>Text Encryption Tool</h1>
+      <textarea id="plaintext" placeholder="Enter your text here..."></textarea>
+      <select id="algorithm">
+        <option value="">Select Encryption Algorithm</option>
+        <option value="caesar">Caesar Cipher</option>
+        <option value="base64">Base64</option>
+        <option value="aes">AES</option>
+        <option value="des">DES</option>
+        <option value="rsa">RSA</option>
+        <option value="sha256">SHA-256 (Hash only)</option>
+      </select>
+      <input
+        type="text"
+        id="key"
+        placeholder="Enter key (for Caesar, AES, DES)"
+      />
+      <button onclick="encryptText()">Encrypt</button>
+      <div style="position: relative">
+        <textarea
+          id="ciphertext"
+          readonly
+          placeholder="Encrypted text will appear here..."
+        ></textarea>
+        <div id="copyIcon" onclick="copyToClipboard()">
+          <i data-lucide="clipboard-copy"></i>
+        </div>
+      </div>
+      <button onclick="decryptText()">Decrypt</button>
+      <textarea
+        id="decryptedtext"
+        readonly
+        placeholder="Decrypted text will appear here..."
+      ></textarea>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <img src="images/haris.png" alt="Haris" class="footer-img" />
+      <p>Muhammad Haris Yasir</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+    background: url(/images/encryption.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Header styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 20px;
+}
+.logo {
+    height: 80px;
+    border-radius: 30px;
+}
+/* Body styling */
+.container {
+    background: white;
+    background: rgba(28, 75, 106, .5);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: white;
+}
+textarea,
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    position: relative;
+}
+textarea,
+input[type="text"] {
+    width: 574px;
+}
+input:disabled {
+    background-color: #eee;
+    color: #777;
+    cursor: not-allowed;
+}
+button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+button:hover,
+button:focus {
+    background-color: #0056b3;
+}
+#copyIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #007bff;
+    font-size: 20px;
+}
+#copyIcon:hover,
+#copyIcon:focus {
+    color: #0056b3;
+}
+.popup {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+    animation: fade 0.5s ease-in-out;
+}
+@keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+/* Footer styling */
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+}
+.footer-img {
+    height: 100px;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto 10px auto;
+}
