@@ -51,7 +51,7 @@ input[type="text"] {
 }
 textarea,
 input[type="text"] {
-    width: 574px;
+    width: 95%;
 }
 input:disabled {
     background-color: #eee;
