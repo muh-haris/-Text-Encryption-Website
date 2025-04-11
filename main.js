@@ -79,8 +79,12 @@ function decryptText() {
             result = rsaDecrypt(ciphertext, rsaPrivateKey.d, rsaPrivateKey.n);
             break;
         case "caesar":
+            const shift = parseInt(key);
+            if (isNaN(shift)) return alert("Please enter a valid number as key for Caesar Cipher.");
+            result = caesarDecrypt(ciphertext, shift);
+            break;
         case "sha256":
-            alert("Decryption not supported for this algorithm.");
+            alert("SHA-256 is a one-way hash and cannot be decrypted.");
             return;
         default:
             alert("Unsupported algorithm selected.");
@@ -90,10 +94,21 @@ function decryptText() {
 }
 
 function caesarEncrypt(str, shift) {
+    shift = ((shift % 26) + 26) % 26; // Normalize to positive shift [0,25]
     return str.replace(/[a-zA-Z]/g, (char) => {
         const base = char <= "Z" ? 65 : 97;
         return String.fromCharCode(
-            ((char.charCodeAt(0) - base + shift + 26) % 26) + base
+            ((char.charCodeAt(0) - base + shift) % 26) + base
+        );
+    });
+}
+
+function caesarDecrypt(str, shift) {
+    shift = ((shift % 26) + 26) % 26; // Normalize shift
+    return str.replace(/[a-zA-Z]/g, (char) => {
+        const base = char <= "Z" ? 65 : 97;
+        return String.fromCharCode(
+            ((char.charCodeAt(0) - base - shift + 26) % 26) + base
         );
     });
 }
